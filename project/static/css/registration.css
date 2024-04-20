@@ -1,0 +1,61 @@
+@import "common.css";
+@import 'main.css';
+
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    font-size: 24px;
+    align-items: center;
+}
+
+.registration-form {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.registration__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.registration__form .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.input-group input {
+    width: 150%;
+    border: 1px solid var(--primary-color);
+    padding: 10px 0 10px 20px;
+    font-size: 24px;
+    border-radius: 30px;
+}
+
+.input-group input::placeholder {
+    font-size: 24px;
+
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form__btn {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    margin-top: 15px;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 30px;
+}

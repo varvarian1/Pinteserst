@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <title>Главная</title>
+</head>
+<body>
+  <navbar>
+    <a href="/create">
+      <button class="button">Создать</button>
+    </a>
+    <a href="/">
+      <button class="button">Главная</button>
+    </a>
+    <form action="/search" method="GET">
+      <input type="text" name="query" placeholder="Поиск" value="{{ query|default_if_none:'' }}" />
+      <button type="submit">Найти что-нибудь</button>
+    </form>
+    <div class="navbar__btns">
+      {% if request.session.user_id %}
+      <a href="{% url 'account:account_detail' acc=request.session.user_id %}">
+        <button class="button">Мой аккаунт</button>
+      </a>
+      {% endif %}
+
+      <a href="/registration">
+        <button class="button">Зарегистрироваться</button>
+      </a>
+
+      <a href="/login">
+        <button class="button">Войти</button>
+      </a>
+    </div>
+  </navbar>
+  <div class="container photos__content">
+    {% for photo in photos %}
+    <div class="photo">
+      <h3>{{ photo.Name }}</h3>
+      <a href="{% url 'main:photo_detail' photo.id %}">
+        <img src="{{ photo.Photo.url }}" alt="{{ photo.Name }}" />
+      </a>
+      <p>{{ photo.Description }}</p>
+      <p>Tags: {{ photo.Tags }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+
+</html>

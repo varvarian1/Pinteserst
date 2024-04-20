@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="login">
+        <div class="form-container login-content">
+            <h1 class="login__title">Вход</h1>
+
+            {% if error_message %}
+            <p>{{ error_message }}</p>
+            {% endif %}
+
+            <form class="registration__form" action="/login/" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="username">Логин</label>
+                    {{ form.User_Name }}
+                </div>
+                <div class="input-group">
+                    <label for="password">Пароль</label>
+                    {{ form.Password }}
+                </div>
+
+                <button type="submit" class="form__btn">Войти</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

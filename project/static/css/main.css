@@ -1,0 +1,117 @@
+@import 'common.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+navbar {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__btns {
+  display: flex;
+  gap: 20px;
+}
+navbar form {
+  display: flex;
+  margin-bottom: 10px;
+  width: 600px;
+}
+
+navbar input[type='text'] {
+  width: 75%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px 0 0 20px;
+}
+navbar button[type='submit'] {
+  width: 25%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+navbar .button {
+  padding: 10px;
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.photo {
+  background-color: #fff;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.photo h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.photo img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.photo p {
+  margin-bottom: 5px;
+}
+
+.photo p.tags {
+  font-style: italic;
+  color: #888;
+}
+.container{
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1400px;
+  width: 100%;
+}
+.photos__content {
+  width: 100%;
+  columns: 5;
+  column-gap: 30px;
+}
+.photos__content .photo{
+  break-inside: avoid;
+}
+.photo h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.photo p.tags {
+  margin-top: auto;
+}
+
+aside .button {
+  width: auto;
+  margin-bottom: 10px;
+}
