@@ -1,5 +1,5 @@
 const LayoutAuth = ({ children }: ILayout) => {
-	return { children };
+	return <>{children}</>;
 };
 
 export default LayoutAuth;
