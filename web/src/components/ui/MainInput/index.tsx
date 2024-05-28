@@ -1,5 +1,4 @@
 import styles from './MainInput.module.scss';
-import React from 'react';
 import cn from 'clsx';
 import IMainInput from './MainInput.interface';
 
