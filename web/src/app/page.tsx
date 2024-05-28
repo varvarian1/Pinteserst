@@ -1,3 +1,5 @@
+import MainButton from '@/components/UI/MainButton';
+
 export default function Home() {
-	return <main>START PAGE!!!</main>;
+	return <MainButton>hello</MainButton>;
 }
