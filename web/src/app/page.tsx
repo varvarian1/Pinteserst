@@ -1,7 +1,3 @@
 export default function Home() {
-  return (
-    <main>
-      START PAGE!!!
-    </main>
-  );
+	return <main>START PAGE!!!</main>;
 }
