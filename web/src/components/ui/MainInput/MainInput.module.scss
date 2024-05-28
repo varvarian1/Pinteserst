@@ -1,0 +1,15 @@
+.main {
+	width: 100%;
+	height: 40px;
+	min-width: 100px;
+	max-width: 400px;
+	background-color: #2d323a;
+	border-radius: 10px;
+	padding-left: 16px;
+	font-size: 12px;
+	font-weight: 400;
+
+	&::placeholder {
+		color: white;
+	}
+}
