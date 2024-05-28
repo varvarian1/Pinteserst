@@ -1,5 +1,4 @@
 import MainButton from '@/components/ui/MainButton';
-import React from 'react';
 import styles from './NotFoundPage.module.scss';
 import Link from 'next/link';
 
