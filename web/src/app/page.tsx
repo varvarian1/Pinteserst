@@ -1,3 +1,5 @@
+import StartPage from '@/page/main/StartPage';
+
 export default function Home() {
-	return <main>Start Page</main>;
+	return <StartPage />;
 }

@@ -1,3 +1,5 @@
+#jetbrains
+.idea
 
 # dependencies
 /node_modules
@@ -29,7 +31,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-.idea
 
 # typescript
 *.tsbuildinfo
