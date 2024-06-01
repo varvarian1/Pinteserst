@@ -3,13 +3,20 @@
 	height: 40px;
 	min-width: 100px;
 	max-width: 400px;
+	box-sizing: border-box;
 	background-color: #2d323a;
 	border-radius: 10px;
-	padding-left: 16px;
-	font-size: 12px;
+	padding: 0 16px;
+	font-size: 14px;
 	font-weight: 400;
+	transition: all 100ms ease-in-out;
 
 	&::placeholder {
-		color: white;
+		color: #ababab;
 	}
+
+	&:hover,
+	&:focus {
+        background-color: #393e47;
+    }
 }

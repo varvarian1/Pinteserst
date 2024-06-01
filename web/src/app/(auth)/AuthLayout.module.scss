@@ -1,12 +1,33 @@
-.auth {
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100vw;
 	height: 100vh;
 
-	&__image {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		height: 100vh;
+		width: 100vw;
+	}
 
+	&__link {
+		width: 100%;
+		margin-bottom: -85px;
+	}
+
+	&__logo {
+		padding: 10px;
+		margin: 32px 0 0 32px;
 	}
 
 	&__center {
-
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
 	}
 }
