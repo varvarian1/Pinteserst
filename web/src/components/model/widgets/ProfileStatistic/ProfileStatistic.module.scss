@@ -1,0 +1,127 @@
+.statistic {
+	background-color: var(--color-bg);
+	border-color: var(--color-border);
+	&:hover {
+		border-color: var(--color-border-hover);
+	}
+	@apply flex flex-col items-start w-full h-full min-h-min rounded-10
+	border-solid border-[1px] px-11 pb-7 pt-5 transition-all duration-200;
+	padding-right: clamp(5px, 2vw, 44px);
+
+	&-title {
+		@apply w-max mx-auto mb-16;
+	}
+
+	&-holder {
+		@apply flex flex-col gap-8 justify-between items-start;
+	}
+
+	.level {
+		@apply flex flex-col gap-5;
+
+		&-title {
+			color: var(--color-text);
+		}
+
+		&-info {
+			@apply flex gap-2 items-center ml-5;
+		}
+
+		&-cycle {
+			@apply mr-16;
+		}
+
+		&-option {
+			color: var(--color-text-grey);
+			@apply flex gap-2 font-semibold animate-none whitespace-nowrap;
+			font-size: clamp(14px, 2vw, 18px);
+
+			.level {
+				@apply whitespace-nowrap text-ellipsis text-[#fff];
+			}
+
+			.option {
+				font-size: clamp(14px, 2vw, 18px);
+			}
+		}
+	}
+
+	.progress {
+		@apply flex flex-col gap-5;
+
+		&-info {
+			@apply flex flex-col ml-5;
+		}
+
+		&-title {
+			color: var(--color-text);
+		}
+
+		&-option {
+			color: var(--color-text-grey);
+			@apply flex gap-2 font-semibold whitespace-nowrap;
+			font-size: clamp(14px, 2vw, 18px);
+
+			.option {
+				font-size: clamp(14px, 2vw, 18px);
+			}
+		}
+	}
+
+	.english-level {
+		@apply flex flex-col gap-3 max-w-[430px];
+
+		.title,
+		.level {
+			color: var(--color-text);
+		}
+
+		.level {
+			@apply font-semibold float-left;
+			font-size: clamp(52px, 10vw, 96px);
+		}
+
+		.info {
+			color: var(--color-text-grey);
+			@apply font-semibold overflow-hidden;
+			font-size: clamp(14px, 2vw, 18px);
+		}
+
+		&-info {
+			@apply flex items-center gap-5 ml-5;
+			margin-left: clamp(0px, 1vw, 20px);
+		}
+	}
+}
+
+@media (width < 630px) {
+	.statistic {
+		@apply items-center;
+	}
+
+	.statistic-holder {
+		@apply items-center;
+	}
+
+	.level,
+	.progress,
+	.english-level {
+		@apply items-center;
+	}
+
+	.level-info {
+		@apply flex-col;
+	}
+
+	.english-level-info,
+	.progress-info,
+	.level-info {
+		@apply ml-0;
+	}
+}
+
+@media (width < 630px) {
+	.statistic {
+		@apply pl-2;
+	}
+}

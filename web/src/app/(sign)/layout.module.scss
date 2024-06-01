@@ -1,0 +1,17 @@
+.container {
+    @apply w-screen flex items-center justify-center h-screen;
+}
+
+.box {
+    max-width: 1440px;
+    width: 1440px;
+    @apply p-20 flex flex-col items-stretch justify-between h-screen;
+}
+
+.logo {
+    width: clamp(150px, 40vw, 212px);
+}
+
+.center {
+    @apply flex justify-center items-center h-full;
+}

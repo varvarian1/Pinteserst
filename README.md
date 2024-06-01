@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-Pinterest site
-=======
 <p align="center">
   <img alt="Language Learning Cards logo" width="250px" src="web/public/img/favicon.ico">
 </p>
@@ -59,4 +56,3 @@ Pinterest site
 <h3 align="center">Fonts:</h2>
 
 - None
->>>>>>> 50e42646dc042b1a36895116f7b7601ce7d97a90

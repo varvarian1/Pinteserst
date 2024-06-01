@@ -1,0 +1,42 @@
+.container {
+    background-color: var(--color-bg);
+    border-color: var(--color-border);
+    @apply flex flex-col border-solid border-[1px] rounded-10 p-7 pt-3
+    pb-2 mt-5 w-fit scale-[.90] animate-[fadeIn_.5s] transition duration-500 justify-center;
+
+    &__opacity {
+        @apply opacity-20;
+    }
+
+    &:hover {
+        @apply opacity-100;
+    }
+
+    .title {
+
+        @apply text-center mb-3;
+    }
+
+    .instructions {
+        @apply flex gap-11
+    }
+
+    .instruction {
+        @apply flex gap-4 items-center mb-2;
+    }
+
+    .icon {
+        @apply w-[40px] h-[40px] flex items-center justify-center
+         bg-color-light-bg border-solid border-[1px] border-color-light-border rounded-5;
+    }
+
+    .icon-letter {
+        color: #4a4a4a;
+        font-family: Arial, sans-serif;
+    }
+
+    .dont-show {
+        @apply w-full text-center mt-3 mb-1 text-16 hover:text-blue-main
+        font-semibold duration-150 pt-1 cursor-pointer;
+    }
+}

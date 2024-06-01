@@ -1,4 +1,4 @@
-import Loader from '@/components/ui/Loader';
+import Loader from '@/components/model/ui/Loader';
 
 const Loading = () => {
 	return <Loader />;

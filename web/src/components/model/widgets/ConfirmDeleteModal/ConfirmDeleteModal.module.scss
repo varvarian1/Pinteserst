@@ -1,0 +1,28 @@
+.container {
+	@apply transition-all relative;
+
+	&-delete {
+		@apply transition-all top-0 left-0 z-30 bg-color-black-20 w-[100vw] h-[100vh] animate-[fadeIn_.5s];
+	}
+
+	.wrapper {
+		background-color: var(--color-bg);
+		@apply z-[70] relative flex flex-col gap-2 items-center p-10 border-3
+		 shadow-default rounded-10 min-w-[145px] max-w-[145px]
+		 animate-[fadeIn_.5s];
+
+		.buttons {
+			@apply flex gap-2;
+		}
+
+		.corner {
+			background-color: var(--color-bg);
+			@apply absolute -top-[7px] left-3 w-[15px] h-[15px] border-t-3 border-l-3 rotate-45 outline-none;
+		}
+	}
+    
+    .active {
+        @apply fixed;
+    }
+}
+

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 #jetbrains
 .idea
 >>>>>>> 50e42646dc042b1a36895116f7b7601ce7d97a90
@@ -36,8 +34,6 @@ yarn-error.log*
 .vercel
 <<<<<<< HEAD
 .idea
-=======
->>>>>>> 50e42646dc042b1a36895116f7b7601ce7d97a90
 
 # typescript
 *.tsbuildinfo

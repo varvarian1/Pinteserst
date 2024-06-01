@@ -1,0 +1,25 @@
+.input-container {
+	@apply max-w-400 relative w-full animate-[fadeIn_.5s];
+	max-width: clamp(240px, 65vw, 400px);
+
+	.input {
+		color: var(--color-text);
+		border-color: var(--color-border);
+		background-color: var(--color-bg);
+
+		&:hover {
+			border-color: var(--color-border-hover);
+		}
+		@apply rounded-10 py-12 px-20 w-full
+		font-normal  outline-none border-solid
+		 border-[1px] transition-all duration-200;
+
+		font-size: clamp(10px, 3vw, 16px);
+		border-radius: clamp(5px, 2vw, 10px);
+		padding: clamp(8px, 2vw, 12px) 16px;
+
+		&:focus {
+			@apply border-color-input-focus;
+		}
+	}
+}

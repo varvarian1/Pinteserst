@@ -1,0 +1,13 @@
+.container {
+	@apply flex flex-col gap-3 items-center justify-center w-full;
+	max-width: clamp(240px, 65vw, 400px);
+	gap: clamp(5px, 2vw, 12px);
+}
+
+.input {
+	@apply w-full max-w-400;
+}
+
+.under-btn-text {
+	@apply flex gap-1 flex-row;
+}

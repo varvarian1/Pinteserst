@@ -1,0 +1,20 @@
+.number {
+    background-color: var(--color-main-bg);
+    border-color: var(--color-border);
+    &:hover {
+        border-color: var(--color-border-hover);
+    }
+    @apply w-[150px] h-[100px] flex items-center justify-center 
+    rounded-10 border-solid border-[1px] transition-all;
+    width: clamp(75px, 20vw, 150px);
+    height: clamp(50px, 15vw, 100px);
+    border-radius: clamp(5px, 10%, 10px);
+}
+
+.title {
+    font-size: clamp(10px, 2vw, 20px)
+}
+
+.stat-item {
+    @apply flex flex-col items-center gap-2;
+}

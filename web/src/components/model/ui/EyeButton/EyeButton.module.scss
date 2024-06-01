@@ -1,0 +1,9 @@
+.off-eye-icon,
+.open-eye-icon {
+	@apply absolute cursor-pointer stroke-color-icons stroke-[2.7]
+			hover:scale-102 active:scale-100;
+
+	width: clamp(18px, 4vw, 24px);
+	top: clamp(-2px, 2vw, 12px);
+	right: clamp(10px, 2vw, 16px);
+}

@@ -1,0 +1,20 @@
+.title {
+	color: var(--color-text);
+	@apply font-bold animate-[fadeIn_.5s];
+	&__extra-small {
+		@apply text-20;
+		font-size: clamp(14px, 4vw, 20px)
+	}
+	&__small {
+		@apply text-24;
+		font-size: clamp(16px, 4vw, 24px);
+	}
+	&__middle {
+		@apply text-28;
+		font-size: clamp(20px, 5vw, 28px);
+	}
+	&__large {
+		@apply text-32;
+		font-size: clamp(20px, 5vw, 32px);
+	}
+}

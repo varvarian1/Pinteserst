@@ -1,0 +1,16 @@
+.swap-card {
+	@apply relative transition-all duration-500;
+	
+	.bottom-card {
+		@apply absolute top-0 left-0 transition-all;
+	}
+	
+	.top-card {
+		@apply z-20 transition-all;
+	
+		&_open {
+			@apply z-20 -translate-y-36 translate-x-2 rotate-6 transition-all;
+		}
+	}
+}
+

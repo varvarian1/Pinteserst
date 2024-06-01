@@ -1,0 +1,25 @@
+.circle {
+  @apply relative flex items-center justify-center;
+
+  svg {
+    @apply h-[114px] w-[114px];
+  }
+
+  .bg {
+    @apply fill-none stroke-[20px] stroke-color-light-bg;
+  }
+
+  .progress {
+    @apply fill-none stroke-[20px] stroke-blue-main;
+
+    stroke-linecap: round;
+    stroke-dasharray: 275;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    animation: big 1.5s ease-in-out;
+  }
+
+  .text {
+    @apply absolute w-full top-[37px] text-center leading-[22px];
+  }
+}

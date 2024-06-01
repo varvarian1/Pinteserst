@@ -1,0 +1,24 @@
+.container {
+	@apply w-screen flex items-center justify-center h-screen;
+}
+
+.box {
+	max-width: 1440px;
+	width: 1440px;
+	@apply p-20 flex flex-col items-stretch justify-between h-screen;
+}
+
+.center {
+	@apply flex justify-center items-center h-full flex-col gap-5;
+}
+
+.title-new {
+	@apply text-5xl;
+	@media (max-width: 1000px) {
+		@apply text-3xl;
+	}
+}
+
+.back-button {
+    @apply w-400
+}

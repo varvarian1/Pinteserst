@@ -1,0 +1,13 @@
+.cards {
+    @apply grid m-4 pr-7 w-fit w-full max-h-fit animate-[fadeIn_.5s];
+    grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+    grid-gap: 20px; 
+
+    &-empty {
+        @apply w-full h-[95%] flex items-center justify-center;
+    }
+}
+
+.empty-message {
+    @apply flex flex-col items-center justify-center
+}

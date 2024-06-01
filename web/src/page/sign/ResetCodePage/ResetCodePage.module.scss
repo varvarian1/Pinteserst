@@ -1,0 +1,21 @@
+.container {
+	@apply flex flex-col gap-2 items-center justify-center w-full;
+	max-width: clamp(240px, 65vw, 400px);
+}
+
+.text {
+	@apply text-center;
+	font-size: clamp(18px, 5vw, 32px);
+}
+
+.small-text {
+	@apply text-center;
+}
+
+.under-btn-text {
+	@apply flex gap-1 flex-row;
+}
+
+.send {
+	@apply cursor-pointer;
+}
