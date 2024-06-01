@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Image from "next/image";
 
 export default function Home() {
@@ -110,4 +111,10 @@ export default function Home() {
       </div>
     </main>
   );
+=======
+import StartPage from '@/page/main/StartPage';
+
+export default function Home() {
+	return <StartPage />;
+>>>>>>> 50e42646dc042b1a36895116f7b7601ce7d97a90
 }

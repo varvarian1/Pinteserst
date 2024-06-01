@@ -2,21 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+=======
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+:root {
+  --text-light: #ffffff;
+  --text-dark: #000000;
+  --background-main: #0D1117;
+>>>>>>> 50e42646dc042b1a36895116f7b7601ce7d97a90
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+<<<<<<< HEAD
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+=======
+    --text-light: #ffffff;
+    --text-dark: #000000;
+    --background-main: #0D1117;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-light: #000000;
+    --text-dark: #000000;
+    --background-main: #c2c2c2;
+>>>>>>> 50e42646dc042b1a36895116f7b7601ce7d97a90
   }
 }
 
 body {
+<<<<<<< HEAD
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -30,4 +114,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+=======
+  color: var(--text-light);
+  background: var(--background-main);
+>>>>>>> 50e42646dc042b1a36895116f7b7601ce7d97a90
 }
