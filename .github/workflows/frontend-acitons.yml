@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
-    branches: [ main ]
+    branches: [ main, settings-of-cv ]
   pull_request:
     branches: [ main ]
 jobs:
@@ -20,7 +20,7 @@ jobs:
       - name: install modules
         run: |
           cd web
-          npm install 
+          npm install
       - name: build project
         run: |
           cd web
