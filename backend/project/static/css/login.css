@@ -1,0 +1,32 @@
+@import "common.css";
+@import 'main.css';
+@import 'registration.css';
+
+.login__title {
+    font-size: 24;
+}
+
+* {
+    font-family: Arial, sans-serif;
+}
+
+.login-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+}
+
+.login__form {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-input input {
+    width: 100%;
+}
