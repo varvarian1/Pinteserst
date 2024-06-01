@@ -8,7 +8,7 @@ const NotFoundPage = () => {
 			<div className={styles.main__error}>Error 404!</div>
 			<div className={styles.main__text}>Not found!</div>
 			<Link href="/">
-				<MainButton>Back</MainButton>
+				<MainButton type="button">Back</MainButton>
 			</Link>
 		</div>
 	);
