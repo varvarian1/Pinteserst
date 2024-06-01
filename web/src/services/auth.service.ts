@@ -1,12 +1,32 @@
 import axios from 'axios';
 
 export default class AuthService {
-	static async postLogin(username: string, password: string) {
+	static async postLogin(email: string, password: string) {
 		const response = await axios.post(
 			'http://localhost:8000',
 			{
-				username,
+				email,
 				password,
+			},
+			{
+				withCredentials: true,
+			},
+		);
+		return response.data;
+	}
+	static async postRegister(
+		name: string,
+		email: string,
+		password: string,
+		repeatPassword: string,
+	) {
+		const response = await axios.post(
+			'http://localhost:8000',
+			{
+				name,
+				email,
+				password,
+				repeatPassword,
 			},
 			{
 				withCredentials: true,

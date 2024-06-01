@@ -23,9 +23,9 @@ export default function RootLayout({ children }: ILayout) {
 				<title>RestInPist</title>
 			</head>
 			<QueryClientProvider client={client}>
-				<body className={inter.className}>
-					<StoreProvider>{children}</StoreProvider>
-				</body>
+				<StoreProvider>
+					<body className={inter.className}>{children}</body>
+				</StoreProvider>
 			</QueryClientProvider>
 		</html>
 	);

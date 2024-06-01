@@ -1,29 +1,56 @@
 'use client';
 
 import MainButton from '@/components/ui/MainButton';
-import { useState } from 'react';
 import { useMutation } from 'react-query';
 import AuthService from '@/services/auth.service';
+import styles from './LoginPage.module.scss';
+import MainInput from '@/components/ui/MainInput';
+import { useForm } from 'react-hook-form';
+
+interface ILoginPage {
+	email: string;
+	password: string;
+}
 
 const LoginPage = () => {
-	const [username, setUsername] = useState('Hozzi');
-	const [password, setPassword] = useState('12345');
+	const { register, handleSubmit } = useForm<ILoginPage>();
 
-	const mutation = useMutation(({ username, password }: any) =>
-		AuthService.postLogin(username, password),
+	const mutation = useMutation(({ email, password }: any) =>
+		AuthService.postLogin(email, password),
 	);
 
-	const setIsAuth = async () => {
-		const data = await mutation.mutateAsync({
-			username,
-			password,
-		});
+	const onSubmit = async ({ email, password }: ILoginPage) => {
+		try {
+			console.log(email, password);
+			const result = (await mutation.mutateAsync({ email, password }))
+				.data;
+			if (result !== undefined) console.log('Result undefined');
+		} catch (err) {
+			console.log('Пароль или имя пользователя невалидны!');
+		}
 	};
+
 	return (
-		<div>
-			<h1>LoginPage</h1>
-			<MainButton onClick={() => setIsAuth()}>Send request</MainButton>
-		</div>
+		<form className={styles.login} onSubmit={handleSubmit(onSubmit)}>
+			<h1 className={styles.login__title}>Login page</h1>
+			<div className={styles.login__inputs}>
+				<MainInput
+					className={styles.login__input}
+					type="email"
+					placeholder="Email"
+					{...register('email')}
+				/>
+				<MainInput
+					className={styles.login__input}
+					type="password"
+					placeholder="Password"
+					{...register('password')}
+				/>
+			</div>
+			<MainButton className={styles.login__button} type="submit">
+				Login
+			</MainButton>
+		</form>
 	);
 };
 
