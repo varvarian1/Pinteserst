@@ -20,7 +20,7 @@ jobs:
       - name: install modules
         run: |
           cd web
-          npm install
+          npm install 
       - name: build project
         run: |
           cd web
