@@ -6,12 +6,18 @@ const MainButton = ({
 	className = '',
 	onClick,
 	children,
+	disabled,
 	type = 'button',
 	...props
 }: IMainButton) => {
 	const cls = cn(className, styles.main);
 	return (
-		<button onClick={onClick} className={cls} type={`${type}`} {...props}>
+		<button
+			onClick={onClick}
+			className={cls}
+			type={`${type}`}
+			disabled={disabled}
+			{...props}>
 			{children}
 		</button>
 	);

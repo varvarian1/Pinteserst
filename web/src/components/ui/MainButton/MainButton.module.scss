@@ -1,18 +1,29 @@
 .main {
 	width: 100%;
-	height: 50px;
+	height: 56px;
 	min-width: 100px;
 	max-width: 400px;
-	background-color: #1868b1;
+	color: var(--text-light);
+	background: linear-gradient(to bottom right, #2180D8, #1868B1);
 	border-radius: 10px;
 	font-size: 20px;
 	font-weight: 500;
 	transition: all 200ms ease-in-out;
+
+	&:hover {
+		background: linear-gradient(to bottom right, #1486ee, #1470c4);
+	}
+
+	&:active {
+		transition: all 50ms ease-in-out;
+		background: linear-gradient(to bottom right, #2577c3, #1b5d99);
+	}
+
+	&:disabled {
+		color: #b7b7b7;
+		background: linear-gradient(to bottom right, #335b80, #193e5f);
+	}
 }
-.main:hover {
-	background-color: #2070bb;
-}
-.main:active {
-	transition: all 50ms ease-in-out;
-	background-color: #1a548a;
-}
+
+
+

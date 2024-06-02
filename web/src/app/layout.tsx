@@ -1,12 +1,15 @@
 'use client';
 
-import { Inter } from 'next/font/google';
+import { Lato } from 'next/font/google';
 import './globals.css';
 import axios from 'axios';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import StoreProvider from '@/app/StoreProvider';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Lato({
+	weight: ['100', '300', '400', '700', '900'],
+	subsets: ['latin'],
+});
 
 axios.defaults.baseURL = 'http://localhost:8000/';
 axios.defaults.xsrfCookieName = 'csrftoken';

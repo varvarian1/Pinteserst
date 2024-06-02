@@ -14,9 +14,16 @@
 		width: 100vw;
 	}
 
-	&__link {
+	&__holder {
+		display: flex;
+		justify-content: left;
+		align-items: center;
 		width: 100%;
 		margin-bottom: -85px;
+	}
+
+	&__link {
+
 	}
 
 	&__logo {
