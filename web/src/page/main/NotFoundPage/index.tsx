@@ -5,10 +5,12 @@ import Link from 'next/link';
 const NotFoundPage = () => {
 	return (
 		<div className={styles.main}>
-			<div className={styles.main__error}>Error 404!</div>
-			<div className={styles.main__text}>Not found!</div>
+			<h1 className={styles.main__error}>404</h1>
+			<p className={styles.main__text}>
+				This page you are looking for cannot be found!
+			</p>
 			<Link href="/">
-				<MainButton type="button">Back</MainButton>
+				<MainButton type="button">Return main</MainButton>
 			</Link>
 		</div>
 	);
