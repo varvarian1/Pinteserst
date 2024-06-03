@@ -1,34 +1,34 @@
 'use client';
 
-import { ReactNode } from 'react';
-import { Inter, Istok_Web } from 'next/font/google';
+import { Lato } from 'next/font/google';
 import './globals.css';
-import { QueryClient, QueryClientProvider } from 'react-query';
 import axios from 'axios';
-import cn from 'clsx';
-import { ThemeProvider } from 'next-themes';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import StoreProvider from '@/app/StoreProvider';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Lato({
+	weight: ['100', '300', '400', '700', '900'],
+	subsets: ['latin'],
+});
 
-axios.defaults.baseURL = 'http://localhost:8010/proxy';
+axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.xsrfCookieName = 'csrftoken';
+axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+axios.defaults.withCredentials = true;
 
 const client = new QueryClient();
 
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: ReactNode;
-}>) {
+export default function RootLayout({ children }: ILayout) {
 	return (
-		<html lang="ru">
+		<html lang="en">
 			<head>
 				<link rel="icon" href="/img/favicon.ico" />
-				<title>EnglishCards</title>
+				<title>RestInPist</title>
 			</head>
 			<QueryClientProvider client={client}>
-				<ThemeProvider attribute="data-theme" defaultTheme="light">
-					<body className={cn(inter.className)}>{children}</body>
-				</ThemeProvider>
+				<StoreProvider>
+					<body className={inter.className}>{children}</body>
+				</StoreProvider>
 			</QueryClientProvider>
 		</html>
 	);

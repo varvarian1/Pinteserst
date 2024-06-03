@@ -1,0 +1,21 @@
+.main {
+	width: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+
+	&__error {
+		color: var(--red);
+		font-weight: 700;
+		font-size: 128px;
+	}
+
+	&__text {
+		font-weight: 600;
+		font-size: 36px;
+		margin-bottom: 32px;
+		margin-top: -32px;
+	}
+}

@@ -1,4 +1,4 @@
-tabWidth: 2
+tabWidth: 4
 useTabs: true
 semi: true
 singleQuote: true
@@ -6,4 +6,4 @@ trailingComma: all
 bracketSpacing: true
 jsxBracketSameLine: true
 arrowParens: avoid
-endOfLine: crlf
+endOfLine: lf

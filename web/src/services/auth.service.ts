@@ -1,56 +1,44 @@
-// eslint-disable-next-line import/named
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 
 export default class AuthService {
-	static async getIsAuth(jwt: string) {
-		const res = await axios.get(`/api/auth/isAuth`, {
-			headers: {
-				Authorization: `Bearer ${jwt}`,
+	static async postToken() {
+		const response = await axios.post('/api/token/');
+		return response.data;
+	}
+	static async postLogin(email: string, password: string) {
+		const response = await axios.post(
+			'/api/token/',
+			{
+				email,
+				password,
 			},
-		});
-		return res.data;
+			{
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				withCredentials: true,
+			},
+		);
+		return response.data;
 	}
-
-	static async getAuthToken() {
-		return await axios.get(`/api/auth/activation`);
-	}
-
-	static async getAuthCodeChangePassword(email: string) {
-		return await axios.get(`/api/auth/changepassword?email=${email}`);
-	}
-
-	static async postLogin(
-		username: string,
+	static async postRegister(
+		name: string,
+		email: string,
 		password: string,
-	): Promise<AxiosResponse<string, string>> {
-		return await axios.post(`/api/auth/login`, { username, password });
-	}
-
-	static async postRegister(username: string, password: string, email: string) {
-		const res = await axios.post(`/api/auth/register`, {
-			username,
-			password,
-			email,
-		});
-		return res.data;
-	}
-
-	static async postAuthActivate(code: string) {
-		return await axios.post(`/api/auth/activate`, { code });
-	}
-
-	static async postEmail(email: string) {
-		return await axios.post(`/api/auth/isEmailExist`, { email });
-	}
-
-	static async postAuthChangePassword(newPassword: string, email: string) {
-		return await axios.post(`/api/auth/changepassword`, { newPassword, email });
-	}
-
-	static async postAuthCodeCheck(code: string, email: string) {
-		return await axios.post(`/api/auth/changepassword/code`, {
-			code,
-			email,
-		});
+		repeatPassword: string,
+	) {
+		const response = await axios.post(
+			'http://localhost:8000',
+			{
+				name,
+				email,
+				password,
+				repeatPassword,
+			},
+			{
+				withCredentials: true,
+			},
+		);
+		return response.data;
 	}
 }
