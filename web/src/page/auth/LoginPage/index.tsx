@@ -35,6 +35,7 @@ const LoginPage = () => {
 			console.log(email, password);
 			const result = (await mutation.mutateAsync({ email, password }))
 				.data;
+			console.log(result);
 			if (result !== undefined) console.log('Result undefined');
 		} catch (err) {
 			console.log('Пароль или имя пользователя невалидны!');
