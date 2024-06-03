@@ -1,0 +1,19 @@
+.link {
+    @apply inline-flex items-center gap-1 w-fit animate-none;
+
+    &:hover {
+        .icon {
+            @apply translate-x-1;
+        }
+    }
+
+    .text {
+        @apply animate-none;
+    }
+    
+    .icon {
+        @apply stroke-[3] transition;
+        stroke: var(--color-text);
+        width: clamp(18px, 4vw, 24px);
+    }
+}

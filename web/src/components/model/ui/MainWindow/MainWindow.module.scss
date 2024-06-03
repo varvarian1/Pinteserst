@@ -1,0 +1,27 @@
+.window {
+  background-color: var(--color-bg);
+  @apply w-full transition-all;
+
+  &-container {
+    border-color: var(--color-bg);
+    background-color: var(--color-main-bg);
+    @apply relative p-24 pr-2 overflow-hidden border-solid border-[1px]
+    mr-[10px] mb-[10px] rounded-10 max-w-full transition-all;
+    padding-left: clamp(15px, 5vw, 24px);
+    padding-top: clamp(15px, 5vw, 24px);
+    padding-bottom: clamp(15px, 5vw, 24px);
+    padding-right: clamp(4px, 1%, 8px);
+  }
+
+  &-main {
+    @apply h-main overflow-y-scroll overflow-x-hidden;
+  }
+  
+  .confirm-modal {
+    @apply absolute top-0 left-0 opacity-100 transition-all;
+  
+    &_off {
+      @apply hidden opacity-0 transition-all;
+    }
+  }
+}

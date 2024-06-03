@@ -1,0 +1,13 @@
+.settings {
+    background-color: var(--color-bg);
+    border-color: var(--color-border);
+    &:hover {
+        border-color: var(--color-border-hover);
+    }
+    @apply flex flex-col items-center justify-center w-full h-auto
+    rounded-10 border-solid border-[1px] px-11 pb-5 pt-5 transition-all duration-200;
+}
+
+.animate {
+    @apply animate-[highligh_5s];
+}

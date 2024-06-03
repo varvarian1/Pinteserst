@@ -1,0 +1,181 @@
+.container {
+	@apply bg-[#ebedef] overflow-hidden;
+
+	
+	.start {
+		@apply min-h-[100vh] pt-[30px] m-auto;
+		background-color: var(--color-bg);
+    	padding-top: clamp(20px, 5vw, 30px);
+	}
+}
+
+.header {
+  &__container {
+    @apply px-[50px];
+		padding: 0 clamp(20px, 5vw, 50px);
+	}
+  
+	&__holder {
+    @apply flex items-center justify-between w-full flex-nowrap;
+
+    .logo {
+      width: clamp(120px, 30vw, 240px);
+    }
+	}
+
+	&__nav {
+		@apply flex items-center gap-[36px];
+		gap: clamp(18px, 5vw, 36px);
+	}
+
+	&__button {
+		@apply text-nowrap;
+		font-size: clamp(8px, 3vw, 14px);
+		&:last-child {
+			@apply bg-blue-main hover:bg-blue-hover transition text-white rounded-5 px-20 py-8;
+			padding: clamp(4px, 5vw, 8px) clamp(10px, 5vw, 20px);
+		}
+	}
+}
+
+.main {
+	&__info {
+		@apply flex flex-nowrap flex-col;
+	}
+
+	&__start {
+		@apply my-[100px] mb-[150px];
+	}
+
+	&__container {
+		@apply flex justify-center gap-48 items-center px-[125px];
+		gap: clamp(50px, 5vw, 192px);
+	}
+
+	&__title {
+		color: var(--color-text);
+		@apply font-bold text-[48px] text-nowrap;
+		font-size: clamp(16px, 4vw, 48px);
+	}
+
+	&__subtitle {
+		color: var(--color-text);
+		@apply font-bold mt-[-10px] mb-[40px] text-nowrap;
+		font-size: clamp(10px,2vw, 24px);
+		margin-bottom: clamp(20px, 3vw, 40px);
+	}
+
+	&__button {
+		@apply w-[70%] flex items-center justify-center text-white-text 
+    font-bold text-16 bg-blue-main hover:bg-blue-hover transition text-nowrap;
+		font-size: clamp(8px, 2vw, 16px);
+		border-radius: clamp(5px, 2vw, 10px);
+		padding: clamp(8px, 3vw, 24px) clamp(24px, 4vw, 52px);
+	}
+
+	&__image {
+		width: clamp(180px, 20vw, 285px);
+	}
+
+	&__creators-title {
+		@apply flex justify-center items-center font-bold text-28 text-nowrap mb-[40px] text-[#24292F];
+		font-size: clamp(18px, 5vw, 28px);
+	}
+
+	&__container-creators {
+		@apply mx-[50px] my-[100px];
+		margin: clamp(50px, 5vw, 100px) 50px;
+
+		.creators {
+			@apply flex flex-wrap justify-center items-center text-[#24292F];
+			gap: clamp(20px, 5vw, 50px);
+
+			.creator {
+				@apply flex flex-col items-center justify-center gap-[20px];
+
+				&__image {
+					@apply rounded-[50%];
+					width: clamp(150px, 1%, 200px);
+				}
+
+				&__name {
+					@apply flex justify-center items-center font-bold text-nowrap hover:text-blue-main transition;
+					font-size: clamp(14px, 5vw, 24px);
+				}
+			}
+		}
+	}
+}
+
+.cards {
+	background-color: var(--color-main-bg);
+	border-color: var(--color-border);
+	@apply border-solid border-y-[1px];
+
+	&__container {
+		@apply flex flex-wrap items-center justify-center gap-9 p-[50px] w-full;
+		padding: clamp(20px, 5vw, 50px);
+
+	}
+
+  &__card {
+	  background-color: var(--color-bg);
+	  border-color: var(--color-border);
+	  color: var(--color-text);
+	  &:hover {
+		  border-color: var(--color-border-hover);
+	  }
+    @apply flex flex-wrap items-center text-center h-[275px] w-[225px] font-bold
+      rounded-15 px-20 py-[30px] border-solid border-[1px] transition-all;
+    max-height: clamp(145px, 40vw, 275px);
+    max-width: clamp(115px, 30vw, 225px);
+  }
+
+  &__text {
+    @apply font-bold;
+    font-size: clamp(12px, 3vw, 18px);
+  }
+}
+
+.footer {
+	background-color: var(--color-main-bg);
+	border-color: var(--color-border);
+	@apply border-solid border-t-[1px];
+
+	&__container {
+		@apply px-[50px];
+		padding: 0 clamp(20px, 5vw, 50px);
+	}
+
+	&__holder {
+		@apply flex items-center justify-between py-16;
+	}
+
+	&__link {
+		@apply text-blue-main underline;
+		font-size: clamp(12px, 5vw, 16px);
+	}
+
+	&__year {
+		font-size: clamp(12px, 5vw, 16px);
+	}
+}
+
+
+@media (width < 750px) {
+	.main__image {
+		@apply hidden;
+	}
+
+	.main__title {
+		@apply mb-2;
+	}
+
+	.main__info {
+		@apply items-center justify-center;
+	}
+
+	.main__start {
+		@apply my-[60px];
+	}
+}

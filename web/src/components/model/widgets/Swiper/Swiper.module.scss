@@ -1,0 +1,149 @@
+.wrapper {
+	background-color: var(--color-main-bg);
+	@apply z-[200] relative w-full h-svh flex flex-col overflow-hidden 
+	items-center justify-center animate-[fadeIn_.5s]
+	transition-all duration-1000;
+
+	.gray-line {
+		background-color: var(--color-bg);
+		@apply absolute top-0 left-0 h-2 w-[100vw];
+	}
+
+	.blue-line {
+		@apply absolute top-0 left-0 bg-blue-main h-2 z-10 transition-all duration-[400ms];
+	}
+
+	.chevron-left,
+	.chevron-right {
+		@apply flex items-center justify-center absolute w-24 h-svh opacity-20 cursor-pointer transition-all duration-300 z-50;
+		width: clamp(30px, 8vw, 96px);
+
+		&:hover {
+			@apply opacity-100 bg-gradient-to-r from-color-swiper-arrows-bg to-transparent;
+		}
+	}
+
+	.chevron-left {
+		@apply left-0;
+	}
+
+	.chevron-right {
+		@apply absolute right-0;
+
+		&:hover {
+			@apply bg-gradient-to-l from-color-swiper-arrows-bg to-transparent;
+		}
+	}
+
+	.control-buttons {
+		@apply -translate-y-10;
+	}
+
+	.instruction {
+		@apply absolute top-[-10px] right-[-10px];
+	}
+}
+
+.confirm-modal {
+	@apply absolute top-0 left-0 opacity-100 transition-all;
+
+	&_off {
+		@apply hidden opacity-0 transition-all;
+	}
+}
+
+.swiper {
+	@apply relative flex justify-end items-center w-full min-w-[250px] max-w-[1000px] overflow-hidden;
+}
+
+.swiper-container {
+	@apply flex items-center gap-[500px] mr-[38%] h-svh transition duration-500;
+}
+
+.left-shadow,
+.right-shadow {
+	@apply absolute h-[90%] w-60 transition-all duration-200;
+  width: clamp(0px, 8vw, 240px);
+}
+.left-shadow {
+	background: linear-gradient(90deg, var(--color-main-bg) 0%, rgba(0,0,0,0) 100%);
+	@apply left-0 z-10;
+}
+.right-shadow {
+	background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(--color-main-bg) 100%);
+	@apply right-0;
+}
+
+.card {
+	@apply snap-center touch-pan-x;
+
+	&__animate {
+		@apply rotate-45 -translate-y-32;
+	}
+}
+
+.unvisible {
+	@apply hidden; 
+}
+
+.none {
+	@apply opacity-0;
+}
+
+.done {
+	@apply absolute top-0;
+}
+
+@media (width < 850px) {
+	.swiper-container {
+		@apply mr-[35%]
+	}
+}
+
+@media (width < 750px) {
+	.swiper-container {
+		@apply mr-[30%]
+	}
+}
+
+@media (width < 550px) {
+	.swiper-container {
+		@apply gap-[550px]
+	}
+}
+
+@media (width < 480px) {
+	.swiper-container {
+		@apply gap-[580px]
+	}
+}
+
+@media (width < 420px) {
+	.swiper-container {
+		@apply gap-[580px]
+	}
+}
+
+@media (width < 400px) {
+	.swiper-container {
+		@apply mr-[25%] gap-[600px]
+	}
+}
+
+@media (width < 380px) {
+	.swiper-container {
+		@apply mr-[27%] gap-[590px];
+	}
+}
+
+@media (width < 350px) {
+	.swiper-container {
+		@apply gap-[580px];
+	}
+}
+
+@media (width < 300px) {
+	.swiper-container {
+		@apply mr-[20%] gap-[580px];
+	}
+}

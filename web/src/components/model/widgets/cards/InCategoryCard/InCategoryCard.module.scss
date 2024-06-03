@@ -1,0 +1,49 @@
+.box {
+	background-color: var(--color-bg);
+	border-color: var(--color-border);
+	@apply relative rounded-10 border-solid 
+	border-[1px] flex flex-col items-center duration-200
+	justify-center gap-px transition-all;
+	min-width: clamp(200px, 5vw, 256px);
+	max-width: clamp(200px, 60vw, 300px);
+	min-height: clamp(130px, 40vw, 170px);
+
+	&:hover {
+		border-color: var(--color-border-hover);
+	}
+
+	.text-wrapper {
+		@apply max-w-[240px] max-h-16 text-center overflow-y-scroll animate-[fadeInText_.5s];
+		word-wrap: break-word;
+	}
+
+	.text-wrapper::-webkit-scrollbar {
+		display: none;
+	}
+
+	.list {
+		@apply relative flex flex-row gap-1 p-1;
+		
+		.confirm-modal {
+			@apply absolute top-[40px] left-[-5px] opacity-100 transition-all;
+		
+			&_off {
+				@apply hidden opacity-0 transition-all;
+			}
+		}
+	
+		.edit-button {
+			&:hover {
+				@apply stroke-blue-main;
+			}
+		}
+	
+		.btn {
+			@apply cursor-pointer hover:scale-95 duration-100;
+		}
+	}
+}
+
+
+
+

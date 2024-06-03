@@ -1,0 +1,66 @@
+.train-done-page {
+	@apply w-full h-height flex flex-col whitespace-nowrap gap-5 justify-center items-center animate-[fadeIn_1s] z-[2000];
+
+	.text {
+		@apply absolute text-[70px] font-semibold opacity-0 transition-all duration-500;
+	}
+
+	.first {
+		@apply block animate-[fadeIn_.8s] opacity-100;
+		font-size: clamp(24px, 7vw, 50px);
+	}
+
+	.second {
+		@apply static opacity-100;
+		font-size: clamp(24px, 7vw, 50px);
+	}
+
+	.stat {
+		@apply flex gap-3;
+	}
+
+	.number {
+		 color: var(--color-text-grey);
+		@apply font-semibold;
+		font-size: clamp(16px, 5vw, 30px);
+	}
+
+	.action-buttons {
+		@apply flex gap-3;
+	}
+
+	.action-button {
+		@apply flex gap-3 items-center justify-center z-[2000];
+	}
+
+	.info {
+		@apply absolute opacity-0;
+
+		&-ready {
+			@apply flex flex-col items-center animate-[fadeIn_1s] opacity-100;
+			gap: clamp(15px, 3vw, 28px);
+		}
+	}
+
+	.icon {
+		width: clamp(15px, 3vw, 20px);
+	}
+}
+
+@media (max-width: 5000px) {
+	.second {
+		transform: translateY(-192px);
+	}
+}
+
+@media (max-width: 600px) {
+	.second {
+		transform: translateY(-144px);
+	}
+}
+
+@media (max-width: 450px) {
+	.second {
+		transform: translateY(-114px);
+	}
+}

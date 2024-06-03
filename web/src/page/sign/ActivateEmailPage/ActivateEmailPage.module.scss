@@ -1,0 +1,15 @@
+.container {
+	@apply flex flex-col gap-2 items-center justify-center w-full max-w-400;
+}
+
+.text {
+	@apply text-center;
+}
+
+.under-btn-text {
+	@apply flex gap-1 flex-row;
+}
+
+.send {
+	@apply cursor-pointer;
+}

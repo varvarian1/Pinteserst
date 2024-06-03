@@ -1,0 +1,5 @@
+.header {
+  background: var(--color-bg);
+  @apply flex justify-center items-center w-full max-h-[50px]
+  py-8 transition-all;
+}

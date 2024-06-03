@@ -1,0 +1,26 @@
+.box {
+	background-color: var(--color-bg);
+	border-color: var(--color-border);
+	@apply pt-3 rounded-10 duration-200
+	flex flex-col items-center justify-center gap-1 border-solid border-[1px] transition-all;
+	min-width: clamp(200px, 5vw, 256px);
+	max-width: clamp(200px, 60vw, 300px);
+	min-height: clamp(130px, 40vw, 170px);
+
+	.text-wrapper {
+		@apply max-w-[240px] max-h-16 text-center overflow-y-scroll animate-[fadeInText_.5s];
+		word-wrap: break-word;
+	}
+
+	.text-wrapper::-webkit-scrollbar {
+		display: none;
+	}
+
+	&:hover {
+		border-color: var(--color-border-hover);
+	}
+	
+	.play {
+		@apply hover:stroke-green-main cursor-pointer duration-200;
+	}		
+}
