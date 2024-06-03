@@ -1,14 +1,21 @@
 import axios from 'axios';
 
 export default class AuthService {
+	static async postToken() {
+		const response = await axios.post('/api/token/');
+		return response.data;
+	}
 	static async postLogin(email: string, password: string) {
 		const response = await axios.post(
-			'http://localhost:8000',
+			'/api/token/',
 			{
 				email,
 				password,
 			},
 			{
+				headers: {
+					'Content-Type': 'application/json',
+				},
 				withCredentials: true,
 			},
 		);

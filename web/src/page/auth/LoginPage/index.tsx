@@ -22,7 +22,15 @@ const LoginPage = () => {
 		AuthService.postLogin(email, password),
 	);
 
+	const getToken = useMutation(() => AuthService.postToken());
+
 	const onSubmit = async ({ email, password }: ILoginPage) => {
+		// try {
+		// 	const result = (await getToken.mutateAsync()).data;
+		// 	if (result !== undefined) console.log('Token undefined');
+		// } catch (err) {
+		// 	console.log('Token невалидны!');
+		// }
 		try {
 			console.log(email, password);
 			const result = (await mutation.mutateAsync({ email, password }))
@@ -52,15 +60,15 @@ const LoginPage = () => {
 								value: 36,
 								message: 'Email is too long',
 							},
-							validate: {
-								noRussianLetters: value =>
-									!/[А-яЁё]/.test(value) ||
-									'Email must not contain Russian letters',
-								validFormat: value =>
-									/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i.test(
-										value,
-									) || 'Invalid email format',
-							},
+							// validate: {
+							// 	noRussianLetters: value =>
+							// 		!/[А-яЁё]/.test(value) ||
+							// 		'Email must not contain Russian letters',
+							// 	validFormat: value =>
+							// 		/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i.test(
+							// 			value,
+							// 		) || 'Invalid email format',
+							// },
 						})}
 					/>
 					{errors?.email && (
@@ -87,17 +95,17 @@ const LoginPage = () => {
 								value: 36,
 								message: 'Password is too long',
 							},
-							validate: {
-								noRussianLetters: value =>
-									!/[А-яЁё]/.test(value) ||
-									'Password must not contain Russian letters',
-								hasUpperCase: value =>
-									/[A-Z]/.test(value) ||
-									'Password must contain at least one uppercase letter',
-								hasNumber: value =>
-									/\d/.test(value) ||
-									'Password must contain at least one number',
-							},
+							// validate: {
+							// 	noRussianLetters: value =>
+							// 		!/[А-яЁё]/.test(value) ||
+							// 		'Password must not contain Russian letters',
+							// 	hasUpperCase: value =>
+							// 		/[A-Z]/.test(value) ||
+							// 		'Password must contain at least one uppercase letter',
+							// 	hasNumber: value =>
+							// 		/\d/.test(value) ||
+							// 		'Password must contain at least one number',
+							// },
 						})}
 					/>
 					{errors?.password && (
