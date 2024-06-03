@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'login.apps.LoginConfig',
     'registration.apps.RegistrationConfig',
     'main.apps.MainConfig',
+    'rest_framework_simplejwt',
+    'corsheaders',
     'rest_framework',
     'rest',
     'django.contrib.admin',
@@ -56,6 +58,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
 ]
 
 ROOT_URLCONF = 'project.urls'
