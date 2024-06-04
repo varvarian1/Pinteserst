@@ -9,8 +9,8 @@ export default class AuthService {
 		const response = await axios.post(
 			'http://localhost:8000/api/token/',
 			{
-				Username: 'varvarian',
-				Password: '75204685n',
+				username: 'varvarian',
+				password: '75204685n',
 			},
 			{
 				headers: {
@@ -19,8 +19,7 @@ export default class AuthService {
 				withCredentials: true,
 			},
 		);
-		console.log(response);
-		return response;
+		return response.data;
 	}
 	static async postRegister(
 		name: string,

@@ -32,9 +32,7 @@ const LoginPage = () => {
 		// 	console.log('Token невалидны!');
 		// }
 		try {
-			console.log(email, password);
-			const result = (await mutation.mutateAsync({ email, password }))
-				.data;
+			const result = await mutation.mutateAsync({ email, password });
 			console.log(result);
 			if (result !== undefined) console.log('Result undefined');
 		} catch (err) {
