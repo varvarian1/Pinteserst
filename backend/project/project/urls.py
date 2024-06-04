@@ -9,6 +9,8 @@ from rest.views import PhotoPagination, PhotoPaginationList
 from rest.views import RegistrationAPIView
 from rest.views import LoginAPIView
 
+from rest.views import UserRegistrationView
+
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
 
@@ -16,9 +18,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls', namespace='main')),
     path('login/', include('login.urls', namespace='login')),
-    path('registration/', include('registration.urls', namespace='registration')),
     path('create/', include('create.urls', namespace='create')),
     path('account/', include('account.urls', namespace='account')),
+
+    path('registration/', UserRegistrationView.as_view()),
     
     path('api/photos/', PhotoAPIView.as_view()),
     path('api/users/', RegistrationAPIView.as_view()),

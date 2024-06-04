@@ -16,6 +16,9 @@ from registration.models import Registration
 from .serializers import PhotosSerializer
 from create.models import Photos
 
+from django.contrib.auth.models import User
+from .serializers import UserSerializer
+
 # Photos 
 
 class PhotoAPIView(APIView):
@@ -54,6 +57,22 @@ class RegistrationAPIView(APIView):
             return Response(serializer.data)
         else:
             return Response(serializer.errors, status=400)
+        
+
+""" 
+Registration 
+
+method Get return all users and fields 
+erializer_class creat users 
+"""
+
+class UserRegistrationView(generics.CreateAPIView):
+
+    serializer_class = UserSerializer
+
+    def get(self, request):
+        arr = User.objects.all().values()
+        return Response({'posts': list(arr)})
         
 
 """ 
