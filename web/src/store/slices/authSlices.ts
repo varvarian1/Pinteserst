@@ -1,23 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 interface IAuthState {
-	value: boolean;
+	isAuth: boolean;
+	access: string;
 }
 
 const initialState: IAuthState = {
-	value: false,
+	isAuth: false,
+	access: '',
 };
 
 export const authSlice = createSlice({
 	name: 'auth',
 	initialState,
 	reducers: {
-		isAuth: (state: IAuthState) => {
-			state.value = !state.value;
+		isAuth: (state: IAuthState, action) => {
+			state.isAuth = action.payload;
+		},
+		setJWT: (state: IAuthState, action) => {
+			state.access = action.payload;
 		},
 	},
 });
 
-export const { isAuth } = authSlice.actions;
+export const { isAuth, setJWT } = authSlice.actions;
 
 export default authSlice.reducer;

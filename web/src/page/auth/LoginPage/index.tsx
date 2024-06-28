@@ -10,6 +10,8 @@ import ILoginPage from './login-page.interface';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CircleX } from 'lucide-react';
+import { useDispatch } from 'react-redux';
+import { isAuth, setJWT } from '@/store/slices/authSlices';
 
 const LoginPage = () => {
 	const {
@@ -18,24 +20,20 @@ const LoginPage = () => {
 		handleSubmit,
 	} = useForm<ILoginPage>({ mode: 'onBlur' });
 
-	const mutation = useMutation(({ email, password }: any) =>
+	const dispatch = useDispatch();
+
+	const mutation = useMutation(({ email, password }: ILoginPage) =>
 		AuthService.postLogin(email, password),
 	);
 
-	const getToken = useMutation(() => AuthService.postToken());
-
 	const onSubmit = async ({ email, password }: ILoginPage) => {
-		// try {
-		// 	const result = (await getToken.mutateAsync()).data;
-		// 	if (result !== undefined) console.log('Token undefined');
-		// } catch (err) {
-		// 	console.log('Token невалидны!');
-		// }
 		try {
 			const result = await mutation.mutateAsync({ email, password });
-			console.log(result);
-			if (result !== undefined) console.log('Result undefined');
-		} catch (err) {
+			if (result !== undefined) {
+				dispatch(isAuth(true));
+				dispatch(setJWT(result.access));
+			}
+		} catch {
 			console.log('Пароль или имя пользователя невалидны!');
 		}
 	};
@@ -59,15 +57,15 @@ const LoginPage = () => {
 								value: 36,
 								message: 'Email is too long',
 							},
-							// validate: {
-							// 	noRussianLetters: value =>
-							// 		!/[А-яЁё]/.test(value) ||
-							// 		'Email must not contain Russian letters',
-							// 	validFormat: value =>
-							// 		/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i.test(
-							// 			value,
-							// 		) || 'Invalid email format',
-							// },
+							validate: {
+								noRussianLetters: value =>
+									!/[А-яЁё]/.test(value) ||
+									'Email must not contain Russian letters',
+								validFormat: value =>
+									/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i.test(
+										value,
+									) || 'Invalid email format',
+							},
 						})}
 					/>
 					{errors?.email && (
@@ -94,17 +92,17 @@ const LoginPage = () => {
 								value: 36,
 								message: 'Password is too long',
 							},
-							// validate: {
-							// 	noRussianLetters: value =>
-							// 		!/[А-яЁё]/.test(value) ||
-							// 		'Password must not contain Russian letters',
-							// 	hasUpperCase: value =>
-							// 		/[A-Z]/.test(value) ||
-							// 		'Password must contain at least one uppercase letter',
-							// 	hasNumber: value =>
-							// 		/\d/.test(value) ||
-							// 		'Password must contain at least one number',
-							// },
+							validate: {
+								noRussianLetters: value =>
+									!/[А-яЁё]/.test(value) ||
+									'Password must not contain Russian letters',
+								hasUpperCase: value =>
+									/[A-Z]/.test(value) ||
+									'Password must contain at least one uppercase letter',
+								hasNumber: value =>
+									/\d/.test(value) ||
+									'Password must contain at least one number',
+							},
 						})}
 					/>
 					{errors?.password && (

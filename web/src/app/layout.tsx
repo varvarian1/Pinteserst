@@ -25,11 +25,11 @@ export default function RootLayout({ children }: ILayout) {
 				<link rel="icon" href="/img/favicon.ico" />
 				<title>RestInPist</title>
 			</head>
-			<QueryClientProvider client={client}>
-				<StoreProvider>
-					<body className={inter.className}>{children}</body>
-				</StoreProvider>
-			</QueryClientProvider>
+			<body className={inter.className}>
+				<QueryClientProvider client={client}>
+					<StoreProvider>{children}</StoreProvider>
+				</QueryClientProvider>
+			</body>
 		</html>
 	);
 }
