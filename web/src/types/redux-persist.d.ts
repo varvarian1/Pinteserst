@@ -14,7 +14,14 @@ declare module 'redux-persist' {
 		blacklist?: string[];
 	}
 
-	export function persistReducer<S, A>(config: PersistConfig, reducer: Reducer<S, A>): Reducer<S, A>;
+	export function persistReducer<S, A>(
+		config: PersistConfig,
+		reducer: Reducer<S, A>,
+	): Reducer<S, A>;
 
-	export function persistStore(store: any, options?: any, callback?: () => any): any;
+	export function persistStore(
+		store: any,
+		options?: any,
+		callback?: () => any,
+	): any;
 }
